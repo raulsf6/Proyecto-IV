@@ -1,10 +1,31 @@
 # Proyecto-IV
 Proyecto para la asignatura de IV en la UGR, curso 19/20
 
-## Descripción
-El proyecto consiste en un sistema de administración de productos de un supermercado, en el que se podrá consultar, así como crear, los productos y sus características. Para crear, actualizar o eliminar productos se deberá ser administrador.
+## Idea Principal
+El principal objetivo es ser capaz de gestionar los productos de un supermercado de forma que se puedan consultar, crear, eliminar y actualizar productos. Cada uno dispondrá de la siguiente información:
 
-## Desarrollo
-* Para el desarrollo de la API REST se utilizará [Node.JS](https://nodejs.org/es/)
-* Para el almacenamiento de los productos y usuarios se usará [MongoDB](https://www.mongodb.com/es)
-* Para la autenticación se usará [JWT](https://jwt.io/)
+- Código de barras
+
+- Información nutricional:
+    - Energía por 100 gramos (kcal)
+    - Grasas por 100 gramos (g)
+    - Hidratos de carbono por 100 gramos (g)
+    - Proteínas por 100 gramos (g)
+
+- Marca
+
+- Alérgenos
+
+
+## Cómo se implementará
+
+* Se usará una aquitectura de microservicios.
+* La interacción con los microservicios se realizará mediante una API RESTful.
+* Para el almacenanmiento de los productos se usará una base de datos, con la que el microservicio interactuará para consultar, crear, eliminar o actualizar productos.
+
+## Herramientas a utilizar
+
+* Para la implementación del microservicio se usará Node.JS.
+* Para la implementación de la API RESTful se usará el paquete Express de NodeJs.
+* Para la base de datos se usará MongoDB.
+* El ORM para la interacción con la base de datos será mongoose.
