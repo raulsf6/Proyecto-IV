@@ -22,6 +22,7 @@ El principal objetivo es ser capaz de gestionar los productos de un supermercado
 * Se usará una aquitectura de microservicios.
 * La interacción con los microservicios se realizará mediante una API RESTful.
 * Para el almacenanmiento de los productos se usará una base de datos, con la que el microservicio interactuará para consultar, crear, eliminar o actualizar productos.
+* Se usará un servicio de log.
 
 ## Herramientas a utilizar
 
@@ -29,3 +30,4 @@ El principal objetivo es ser capaz de gestionar los productos de un supermercado
 * Para la implementación de la API RESTful se usará el paquete Express de NodeJs.
 * Para la base de datos se usará MongoDB.
 * El ORM para la interacción con la base de datos será mongoose.
+* Para el servicio de log se usará la biblioteca Morgan.
