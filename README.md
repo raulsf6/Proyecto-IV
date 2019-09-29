@@ -1,4 +1,6 @@
 # Proyecto-IV
+![test status](https://travis-ci.org/raulsf6/Proyecto-IV.svg?branch=master)
+
 Proyecto para la asignatura de IV en la UGR, curso 19/20
 
 ## Idea Principal
