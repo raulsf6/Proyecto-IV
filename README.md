@@ -28,8 +28,10 @@ El principal objetivo es ser capaz de gestionar los productos de un supermercado
 
 ## Herramientas a utilizar
 
-* Para la implementación del microservicio se usará Node.JS.
-* Para la implementación de la API RESTful se usará el paquete Express de NodeJs.
-* Para la base de datos se usará MongoDB.
-* El ORM para la interacción con la base de datos será mongoose.
-* Para el servicio de log se usará la biblioteca Morgan.
+* Como **lenguaje** se usará Javascript, en concreto, [Node.JS](https://nodejs.org/en/) en su versión 10.16.3 LTS.
+* Para la implementación de la **API RESTful** se usará el paquete [Express](https://www.npmjs.com/package/express) de NodeJs.
+* Para la base de datos se usará [MongoDB](https://www.mongodb.com/es).
+* El **ORM** para la interacción con la base de datos será [Mongoose](https://www.npmjs.com/package/mongoose).
+* Para el servicio de **log** se usará la biblioteca [Morgan](https://www.npmjs.com/package/morgan).
+* Los **tests** se realizarán usando el paquete [Mocha](https://www.npmjs.com/package/mocha).
+* Para **integración continua** se usará [Travis](https://travis-ci.org/).
