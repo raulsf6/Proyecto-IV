@@ -1,6 +1,6 @@
 var assert = require('assert');
 var request = require('request');
-var server = require('../bin/www');
+var server = require('../src/bin/www');
 
 describe('Index', function() {
   describe('/GET', function() {
