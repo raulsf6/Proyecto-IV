@@ -1,0 +1,16 @@
+[
+    {
+       "label": "00001",
+       "nutritional": {
+            "energy" : 54,
+            "fat": 13,
+            "carbohydrates": 57,
+            "proteins": 75
+       },
+       "brand": "nestle",
+       "allergens" : [
+           "peanuts",
+           "milk"
+       ]
+    }
+]
