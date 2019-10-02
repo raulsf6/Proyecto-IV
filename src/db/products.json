@@ -12,5 +12,19 @@
            "peanuts",
            "milk"
        ]
-    }
+    },
+
+    {
+        "label": "00002",
+        "nutritional": {
+             "energy" : 4,
+             "fat": 73,
+             "carbohydrates": 97,
+             "proteins": 7
+        },
+        "brand": "danone",
+        "allergens" : [
+            "milk"
+        ]
+     }
 ]
