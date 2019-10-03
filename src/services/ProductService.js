@@ -1,27 +1,24 @@
 const fs = require('fs');
 const path = require('path');
+const low = require('lowdb');
+const FileAsync = require('lowdb/adapters/FileAsync');
 
 
 class ProductService{
     constructor(){
-        this.products = null;
-        this.products = JSON.parse(fs.readFileSync(path.join(__dirname,'../db/products.json')));
+        const adapter = new FileAsync(path.join(__dirname, '../db/products.json'));
+        (async () => {
+            this.db = await low(adapter);
+            this.db.defaults({ prods: []}).write();
+        })()
     }
 
     getProduct(label){
-        let prod = null
-        this.products.forEach(element => {
-            if (label === element.label){
-                prod = element;
-                return
-            }
-        });
-
+        var prod = this.db.get('prods').find({label: label}).value();
         return prod;
     }
 
     addProduct(product){
-
     }
 
     updateProduct(product){
