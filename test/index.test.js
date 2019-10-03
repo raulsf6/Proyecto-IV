@@ -14,13 +14,29 @@ describe('Storage handler', function() {
     });
   });
 
-  /*
-  describe('Set object with label 000002', function() {
+  
+  describe('Set object with label 000003', function() {
     it('should create a full object', function(done) {
-        
+        product = {
+          "label": "00003",
+          "nutritional": {
+            "energy": 15,
+            "fat": 12,
+            "carbohydrates": 7,
+            "proteins": 16
+          },
+          "brand": "gallo",
+          "allergens": [
+          ]
+        }
+        prod = prodservice.addProduct(product);
+        expect(prod).to.exist;
+        prod = prodservice.getProduct('00003');
+        expect(prod).to.exist;
     });
   });
 
+  /*
   describe('Update object with label 000002', function() {
     it('should update object wuth label 000002', function(done) {
         
