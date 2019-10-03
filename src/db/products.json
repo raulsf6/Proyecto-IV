@@ -1,30 +1,31 @@
-[
+{
+  "prods": [
     {
-       "label": "00001",
-       "nutritional": {
-            "energy" : 54,
-            "fat": 13,
-            "carbohydrates": 57,
-            "proteins": 75
-       },
-       "brand": "nestle",
-       "allergens" : [
-           "peanuts",
-           "milk"
-       ]
+      "label": "00001",
+      "nutritional": {
+        "energy": 54,
+        "fat": 13,
+        "carbohydrates": 57,
+        "proteins": 75
+      },
+      "brand": "nestle",
+      "allergens": [
+        "peanuts",
+        "milk"
+      ]
     },
-
     {
-        "label": "00002",
-        "nutritional": {
-             "energy" : 4,
-             "fat": 73,
-             "carbohydrates": 97,
-             "proteins": 7
-        },
-        "brand": "danone",
-        "allergens" : [
-            "milk"
-        ]
-     }
-]
+      "label": "00002",
+      "nutritional": {
+        "energy": 4,
+        "fat": 73,
+        "carbohydrates": 97,
+        "proteins": 7
+      },
+      "brand": "danone",
+      "allergens": [
+        "milk"
+      ]
+    }
+  ]
+}
