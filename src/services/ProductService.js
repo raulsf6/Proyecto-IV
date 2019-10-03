@@ -10,7 +10,7 @@ class ProductService{
         (async () => {
             this.db = await low(adapter);
             await this.db.defaults({ prods: []}).write();
-        })()
+        })();
     }
 
     getProduct(label){
@@ -21,20 +21,22 @@ class ProductService{
     addProduct(product){
         
         if (this.db.get('prods').find({label: product.label}).isEmpty().value()){
-            this.db.get('prods').push(product).write();
+            return this.db.get('prods').push(product).write();
         }
         else{
-            throw new Error("WRITE_ERROR: Porduct already exists");
+            throw new Error("WRITE_ERROR: Product already exists");
         }
-        return; 
     }
 
     updateProduct(product){
-
+        if(!this.db.get('prods').find({label: product.label}).isEmpty().value())
+            return this.db.get('prods').find({label: product.label}).assign(product).write();
+        else
+            throw new Error("UPDATE_ERROR: Product does not exist");
     }
 
     deleteProduct(label){
-        this.db.get('prods').remove({label: product.label}).write();
+        return this.db.get('prods').remove({label: label}).write();
     }
 }
 
