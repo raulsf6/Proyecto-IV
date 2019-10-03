@@ -33,6 +33,7 @@ describe('Storage handler', function() {
         expect(prod).to.exist;
         prod = prodservice.getProduct('00003');
         expect(prod).to.exist;
+        done();
     });
   });
 
@@ -42,11 +43,13 @@ describe('Storage handler', function() {
         
     });
   });
+  */
 
-  describe('Delete object with label 000002', function() {
-    it('should delete object wuth label 000002', function(done) {
-        
+  describe('Delete object with label 000003', function() {
+    it('should delete object wuth label 000003', function(done) {
+        prodservice.deleteProduct('00003');
+        done();
     });
   });
-  */
+  
 });
