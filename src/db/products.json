@@ -2,6 +2,7 @@
   "prods": [
     {
       "label": "00001",
+      "name": "batido",
       "nutritional": {
         "energy": 54,
         "fat": 13,
@@ -16,6 +17,7 @@
     },
     {
       "label": "00002",
+      "name": "yoghurt limón",
       "nutritional": {
         "energy": 4,
         "fat": 73,
