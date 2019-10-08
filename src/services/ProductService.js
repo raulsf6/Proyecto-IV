@@ -5,12 +5,17 @@ const FileAsync = require('lowdb/adapters/FileAsync');
 
 
 class ProductService{
+
     constructor(){
+        this.db = null;
+        
+        this.init();
+    }
+
+    async init(){
         const adapter = new FileAsync(path.join(__dirname, '../db/products.json'));
-        (async () => {
-            this.db = await low(adapter);
-            await this.db.defaults({ prods: []}).write();
-        })();
+        this.db = await low(adapter);
+        await this.db.defaults({ prods: []}).write();
     }
 
     getProduct(label){
