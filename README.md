@@ -1,5 +1,5 @@
 # NutritionAPI
-![test status](https://travis-ci.org/raulsf6/Proyecto-IV.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/raulsf6/Proyecto-IV/badge.svg?branch=master)](https://coveralls.io/github/raulsf6/Proyecto-IV?branch=master) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![test status](https://travis-ci.org/raulsf6/Proyecto-IV.svg?branch=master)](https://github.com/raulsf6/Proyecto-IV) [![Coverage Status](https://coveralls.io/repos/github/raulsf6/Proyecto-IV/badge.svg?branch=master)](https://coveralls.io/github/raulsf6/Proyecto-IV?branch=master) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ## Idea Principal
 
