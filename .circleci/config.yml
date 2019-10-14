@@ -12,5 +12,5 @@ jobs: # a collection of steps
           name: install-project
           command: npm ci
       - run:
-          name: coverage-and-test
-          command: npm run cover
+          name: test
+          command: npm test
