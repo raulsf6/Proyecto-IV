@@ -1,8 +1,9 @@
 var assert = require('assert');
-var request = require('request');
 var expect = require('chai').expect;
-var server = require('../src/bin/www');
-var prodservice = require('../src/services/ProductService');
+var ProductService = require('../src/services/ProductService');
+var db = require("../src/db/database");
+
+prodservice = new ProductService(db);
 
 describe('Storage handler', function() {
   var product = {
