@@ -50,4 +50,6 @@ Se testearán todos los ficheros incluidos bajo el directorio /test/ usando Moch
 
 ## Documentación
 
-very soon...
+### Integración continua
+
+Se puede consultar la documentación sobre la integración continua [aqui](https://github.com/raulsf6/Proyecto-IV/blob/master/docs/CI.md)
