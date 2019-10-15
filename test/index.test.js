@@ -31,9 +31,9 @@ describe('Storage handler', function() {
   });
 
   describe('Set object with label 000003', function() {
-    it('should create a full object', async function() {
+    it('should create a full object', function() {
 
-      prod = await prodservice.addProduct(product);
+      var prod = prodservice.addProduct(product);
       expect(prod).to.exist;
       prod = prodservice.getProduct('00003');
       expect(prod).to.exist;
@@ -42,20 +42,24 @@ describe('Storage handler', function() {
   });
 
   
-  describe('Update object with label 000002', function() {
-    it('should update object with label 000002', async function() {
+  describe('Update object with label 000003', function() {
+    it('should update object with label 000003', function() {
       product.brand = "findus";
-      await prodservice.updateProduct(product);
+      prodservice.updateProduct(product);
     });
   });
   
 
   describe('Delete object with label 000003', function() {
-    it('should delete object with label 000003', async function() {
+    it('should delete object with label 000003', function() {
         
-      await prodservice.deleteProduct('00003');
-      prod = prodservice.getProduct('00003');
-      expect(prod).not.to.exist;
+      prodservice.deleteProduct('00003');
+      var prod;
+      try {
+        prod = prodservice.getProduct('00003');
+      } catch (error) {
+        expect(error.status).to.equal(404);
+      }
     });
   });
   
