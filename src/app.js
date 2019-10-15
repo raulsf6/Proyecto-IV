@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var prodsRouter = require('./routes/prods');
 
 var app = express();
 
@@ -15,6 +16,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/', prodsRouter);
 
 // catch 404 (because is the last possible route) and forward to error handler
 app.use(function(req, res, next) {
@@ -23,8 +25,12 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
-  // send the error
-  res.status(err.status || 500).send("Something went wrong");
+  if (err.status){
+    res.status(err.status).send(err.message);
+  }
+  else{
+    res.status(500).send("Something went wrong");
+  }
 });
 
 module.exports = app;
