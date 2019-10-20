@@ -26,10 +26,10 @@ app.use(function(req, res, next) {
 // error handler
 app.use(function(err, req, res, next) {
   if (err.status){
-    res.status(err.status).send(err.message);
+    res.status(err.status).contentType('application/json').send({"message": err.message});
   }
   else{
-    res.status(500).send("Something went wrong");
+    res.status(500).contentType('application/json').send({"message": "Something went wrong"});
   }
 });
 
