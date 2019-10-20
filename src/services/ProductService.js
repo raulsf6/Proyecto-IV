@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const low = require('lowdb');
-const FileAsync = require('lowdb/adapters/FileAsync');
 
 
 class ProductService{
@@ -40,13 +39,20 @@ class ProductService{
         else{
             var error = new Error("Product does not exist");
             error.status = 404;
-        
             throw error;
         }
     }
 
     deleteProduct(label){
-        return this.db.get('prods').remove({label: label}).write();
+        if (!this.db.get('prods').find({label: label}).isEmpty().value())
+            return this.db.get('prods').remove({label: label}).write();
+        else{
+            var error = new Error("Product does not exist");
+            error.status = 404;
+            throw error;
+        }
+
+            
     }
 }
 
