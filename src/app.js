@@ -29,7 +29,8 @@ app.use(function(err, req, res, next) {
     res.status(err.status).contentType('application/json').send({"message": err.message});
   }
   else{
-    res.status(500).contentType('application/json').send({"message": "Something went wrong"});
+    message = process.env.ENV == 'dev' ? err.message : "Something went wrong"
+      res.status(500).contentType('application/json').send({"message": message});
   }
 });
 
