@@ -1,12 +1,61 @@
 const fs = require('fs');
 const path = require('path');
 const low = require('lowdb');
+var Validator = require('jsonschema').Validator;
 
 
 class ProductService{
 
     constructor(db){
+        this.v = new Validator();
         this.db = db;
+        this.schema = {
+            "type":"object",
+            "properties": {
+                "label":{
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "nutritional": {
+                    "type": "object",
+                    "properties": {
+                        "energy":{
+                            "type": "number",
+                            "minimum": 0,
+                            "maximun": 100
+                        },
+                        "fat":{
+                            "type": "number",
+                            "minimum": 0,
+                            "maximun": 100
+                        },
+                        "carbohydrates":{
+                            "type": "number",
+                            "minimum": 0,
+                            "maximun": 100
+                        },
+                        "proteins":{
+                            "type": "number",
+                            "minimum": 0,
+                            "maximun": 100
+                        }
+                    },
+                    "required": ["energy", "fat", "carbohydrates", "proteins"]
+                },
+                "brand":{
+                    "type": "string"
+                },
+                "allegerns": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": ["label", "name", "nutritional", "brand", "allergens"]
+        }
     }
 
     getProduct(label){
@@ -22,6 +71,8 @@ class ProductService{
     }
 
     addProduct(product){
+
+        this.validateprod(product);
         
         if (this.db.get('prods').find({label: product.label}).isEmpty().value()){
             return this.db.get('prods').push(product).write();
@@ -34,6 +85,9 @@ class ProductService{
     }
 
     updateProduct(product){
+        
+        this.validateprod(product);
+        
         if(!this.db.get('prods').find({label: product.label}).isEmpty().value())
             return this.db.get('prods').find({label: product.label}).assign(product).write();
         else{
@@ -53,6 +107,20 @@ class ProductService{
         }
 
             
+    }
+
+    validateprod(product){
+        var errors = this.v.validate(product, this.schema).errors;
+        
+        if (errors){
+            var message = []
+            errors.forEach((err) => {
+                message.push(err.toString());
+            });
+            var error = new Error(message);
+            error.status = 400;
+            throw error;
+        }
     }
 }
 
