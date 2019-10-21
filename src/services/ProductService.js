@@ -54,7 +54,7 @@ class ProductService{
                     }
                 }
             },
-            "required": ["label", "name", "nutritional", "brand", "allergens"]
+            "required": ["label", "name", "nutritional", "brand"]
         }
     }
 
@@ -111,8 +111,8 @@ class ProductService{
 
     validateprod(product){
         var errors = this.v.validate(product, this.schema).errors;
-        
-        if (errors){
+        console.log(errors);
+        if (errors.length != 0){
             var message = []
             errors.forEach((err) => {
                 message.push(err.toString());
