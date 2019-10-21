@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "pm2 start ./src/bin/www",
+    "start-dev": "node ./src/bin/www",
     "stop": "pm2 stop ./src/bin/www",
     "delete": "pm2 delete ./src/bin/www",
     "test": "mocha --exit",
@@ -14,6 +15,7 @@
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "^1.6.3",
+    "jsonschema": "^1.2.4",
     "lowdb": "^1.0.0",
     "morgan": "~1.9.1",
     "request": "^2.88.0"
