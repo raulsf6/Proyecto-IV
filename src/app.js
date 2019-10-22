@@ -3,11 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+const swaggerDoc = YAML.load(path.join(__dirname, "../docs/swagger.yaml"));
 
 var indexRouter = require('./routes/index');
 var prodsRouter = require('./routes/prods');
 
 var app = express();
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
 app.use(logger('dev'));
 app.use(express.json());
