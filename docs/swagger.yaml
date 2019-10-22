@@ -1,0 +1,111 @@
+openapi: 3.0.0
+info:
+  title: NutritionAPI
+  description: RESTFUL API to get manage products' nutritional info
+  version: "0.1"
+tags:
+  - name: Products
+    description: "API  to manage products"
+  
+paths:
+  
+  /products/{label}:
+    get:
+      tags:
+        [Products]
+      summary: Returns a product with the specified label
+      responses:
+        '200':
+          description: A product JSON object
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: The product does not exist
+    delete:
+      tags:
+        [Products]
+      summary: Deletes an object with the specified label
+      responses:
+        '200':
+          description: The product has been deleted
+        '404':
+          description: The product does not exist
+  
+  /products:
+    post:
+      tags:
+        [Products]
+      summary: Creates a product
+      requestBody:
+        required: true
+        content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+                
+      responses:
+        '200':
+          description: Created
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Product'
+        '400':
+          description: The product already exists or the json object is not properly sent
+    put:
+      tags:
+        [Products]
+      summary: Updates a product
+      requestBody:
+        required: true
+        content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+                
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Product'
+        '400':
+          description: The product does not exist or the json is not properly sent
+
+
+components:
+    schemas:
+      Product:
+        type: object
+        properties:
+          label:
+            type: string
+          name:
+            type: string
+          nutritional:
+            type: object
+            properties:
+              energy:
+                type: number 
+              fat: 
+                type: number
+              carbohydrates:
+                type: number
+              proteins:
+                type: number
+
+          brand:
+            type: string
+          allergens:
+            type: array
+            items:
+              type: string
+        required:  
+          - label
+          - name
+          - nutritional
+          - brand
+          - allergens
