@@ -5,15 +5,21 @@ info:
   version: "0.1"
 tags:
   - name: Products
-    description: "API  to manage products"
+    description: "API to manage products"
   
 paths:
   
-  /products/{label}:
+  /prods/{label}:
     get:
       tags:
         [Products]
       summary: Returns a product with the specified label
+      parameters:
+        - in: path
+          name: label
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: A product JSON object
@@ -27,13 +33,44 @@ paths:
       tags:
         [Products]
       summary: Deletes an object with the specified label
+      parameters:
+        - in: path
+          name: label
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: The product has been deleted
         '404':
           description: The product does not exist
+    put:
+      tags:
+        [Products]
+      summary: Updates a product
+      parameters:
+        - in: path
+          name: label
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'  
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Product'
+        '400':
+          description: The product does not exist or the json is not properly sent
   
-  /products:
+  /prods:
     post:
       tags:
         [Products]
@@ -44,7 +81,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Product'
-                
       responses:
         '200':
           description: Created
@@ -54,26 +90,6 @@ paths:
                 $ref: '#/components/schemas/Product'
         '400':
           description: The product already exists or the json object is not properly sent
-    put:
-      tags:
-        [Products]
-      summary: Updates a product
-      requestBody:
-        required: true
-        content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Product'
-                
-      responses:
-        '200':
-          description: Updated
-          content:
-            application/json:
-              schema: 
-                $ref: '#/components/schemas/Product'
-        '400':
-          description: The product does not exist or the json is not properly sent
 
 
 components:
