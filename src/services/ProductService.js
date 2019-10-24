@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const low = require('lowdb');
-var Validator = require('jsonschema').Validator;
+const Validator = require('jsonschema').Validator;
+const schema = require('./prodschema.json')
 
 
 class ProductService{
@@ -9,53 +10,7 @@ class ProductService{
     constructor(db){
         this.v = new Validator();
         this.db = db;
-        this.schema = {
-            "type":"object",
-            "properties": {
-                "label":{
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "nutritional": {
-                    "type": "object",
-                    "properties": {
-                        "energy":{
-                            "type": "number",
-                            "minimum": 0,
-                            "maximun": 100
-                        },
-                        "fat":{
-                            "type": "number",
-                            "minimum": 0,
-                            "maximun": 100
-                        },
-                        "carbohydrates":{
-                            "type": "number",
-                            "minimum": 0,
-                            "maximun": 100
-                        },
-                        "proteins":{
-                            "type": "number",
-                            "minimum": 0,
-                            "maximun": 100
-                        }
-                    },
-                    "required": ["energy", "fat", "carbohydrates", "proteins"]
-                },
-                "brand":{
-                    "type": "string"
-                },
-                "allegerns": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
-            "required": ["label", "name", "nutritional", "brand"]
-        }
+        this.schema = schema
     }
 
     getProduct(label){
@@ -111,7 +66,6 @@ class ProductService{
 
     validateprod(product){
         var errors = this.v.validate(product, this.schema).errors;
-        console.log(errors);
         if (errors.length != 0){
             var message = []
             errors.forEach((err) => {
