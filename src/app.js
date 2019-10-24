@@ -34,8 +34,8 @@ app.use(function(err, req, res, next) {
     res.status(err.status).contentType('application/json').send({"message": err.message});
   }
   else{
-    message = process.env.ENV == 'dev' ? err.message : "Something went wrong"
-      res.status(500).contentType('application/json').send({"message": message});
+    message = process.env.NODE_ENV == 'dev' ? err.message : "Something went wrong"
+    res.status(500).contentType('application/json').send({"message": message});
   }
 });
 
