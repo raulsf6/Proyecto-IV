@@ -1,6 +1,8 @@
 language: node_js
 node_js:
   - 10.16.3
+  - node # latest stable
+  - lts/* # latest lts
 install:
   - npm ci
 script:
