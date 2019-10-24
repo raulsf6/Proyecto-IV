@@ -1,0 +1,47 @@
+{
+    "type":"object",
+    "properties": {
+        "label":{
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "nutritional": {
+            "type": "object",
+            "properties": {
+                "energy":{
+                    "type": "number",
+                    "minimum": 0,
+                    "maximun": 100
+                },
+                "fat":{
+                    "type": "number",
+                    "minimum": 0,
+                    "maximun": 100
+                },
+                "carbohydrates":{
+                    "type": "number",
+                    "minimum": 0,
+                    "maximun": 100
+                },
+                "proteins":{
+                    "type": "number",
+                    "minimum": 0,
+                    "maximun": 100
+                }
+            },
+            "required": ["energy", "fat", "carbohydrates", "proteins"]
+        },
+        "brand":{
+            "type": "string"
+        },
+        "allegerns": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "required": ["label", "name", "nutritional", "brand"]
+}
