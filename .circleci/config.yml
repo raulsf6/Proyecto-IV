@@ -1,5 +1,5 @@
 version: 2
-# trabajos en paralelo
+# Trabajos en paralelo para cada version de Node
 workflows:
   version: 2
   build-and-test:
@@ -8,7 +8,8 @@ workflows:
       - node-lts
       - node-latest
 
-jobs: 
+jobs:
+  # Crear template y repetir en otras versiones de node
   node-10.16.3: &build-template
     docker: 
       - image: circleci/node:10.16.3
