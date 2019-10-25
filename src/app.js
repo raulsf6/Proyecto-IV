@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
-const swaggerDoc = YAML.load(path.join(__dirname, "../docs/swagger.yaml"));
+const swaggerDoc = YAML.load(path.join(__dirname, "../docs/swagger.yml"));
 
 var indexRouter = require('./routes/index');
 var prodsRouter = require('./routes/prods');
