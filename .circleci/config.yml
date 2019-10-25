@@ -1,6 +1,15 @@
-version: 2.1 
+version: 2
+# trabajos en paralelo
+workflows:
+  version: 2
+  build-and-test:
+    jobs:
+      - node-10.16.3
+      - node-lts
+      - node-latest
+
 jobs: 
-  node-1.0.16.3: &template
+  node-10.16.3: &build-template
     docker: 
       - image: circleci/node:10.16.3
     steps: 
@@ -24,22 +33,14 @@ jobs:
           name: delete
           command: npm run delete
   node-lts:
-    <<: *template
+    <<: *build-template
     docker:
         - image: circleci/node:lts
   node-latest:
-    <<: *template
+    <<: *build-template
     docker:
         - image: circleci/node:latest
 
-
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - node-10.16.3
-      - node-lts
-      - node-latest
 
 
       
