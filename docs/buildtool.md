@@ -6,16 +6,13 @@ La herramienta utilzada para el despliegue es [package.json](https://github.com/
 
 Los scripts con los que cuenta son:
 
-* `npm run start-dev`: Inicia un servidor con un nodemon que recarga el proyecto automáticamente cada vez que hay un cambio en alguno de los archivos .js o .yml
+* `npm run start-dev`: Inicia un servidor con nodemon, que recarga el proyecto automáticamente cada vez que hay un cambio en alguno de los archivos .js o .yml
 
 * `npm start`: Inicia el proyecto con ñla herramienta pm2. Por defecto la iniciará con solo una instancia. Sin embargo, puede recibir el parámetro `-- -i <numero de instancias>` para añadir instancias.
-
-
 
     `npm start -- -i 4` Iniciará el servicio con 4 instancias del mismo.
 
 * `npm stop`: Detendrá el servicio pero no lo borrará de memoria, por lo que será menos costoso volver a lanzarlo con `npm start`
-
 
 * `npm delete`: Eliminará el servicio de memoria junto con todas sus estancias. Volver a cargarlo a memoria será mucho mas costoso.Eliminará el servicio de memoria junto con todas sus estancias. Volver a cargarlo a memoria será mucho mas costoso.
 
