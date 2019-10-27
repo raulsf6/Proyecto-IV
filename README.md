@@ -30,6 +30,10 @@ Cada producto registrado dispondrá de la siguiente información:
 
 Se testearán todos los ficheros incluidos bajo el directorio /test/ usando Mocha.
 
+## Herramienta de construccion
+
+buildtool: package.json
+
 ## Documentación
 
 * [Integración Continua](https://github.com/raulsf6/Proyecto-IV/blob/master/docs/CI.md)
@@ -37,6 +41,3 @@ Se testearán todos los ficheros incluidos bajo el directorio /test/ usando Moch
 * [Build Tool](https://github.com/raulsf6/Proyecto-IV/blob/master/docs/buildtool.md)
 * [Api](https://github.com/raulsf6/Proyecto-IV/blob/master/docs/apidocs.md)
 
-## Herramienta de construccion
-
-buildtool: package.json
