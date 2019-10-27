@@ -37,6 +37,6 @@ Se testearán todos los ficheros incluidos bajo el directorio /test/ usando Moch
 * [Build Tool](https://github.com/raulsf6/Proyecto-IV/blob/master/docs/buildtool.md)
 * [Api](https://github.com/raulsf6/Proyecto-IV/blob/master/docs/apidocs.md)
 
-## Buildtool
+## Herramienta de construccion
 
 `buildtool: package.json`
