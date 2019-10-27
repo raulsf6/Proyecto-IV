@@ -39,4 +39,4 @@ Se testearán todos los ficheros incluidos bajo el directorio /test/ usando Moch
 
 ## Herramienta de construccion
 
-`buildtool: package.json`
+buildtool: package.json
