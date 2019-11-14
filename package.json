@@ -12,7 +12,6 @@
     "test": "mocha --exit",
     "cover": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
-  
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -21,7 +20,10 @@
     "jsonschema": "^1.2.4",
     "lowdb": "^1.0.0",
     "morgan": "~1.9.1",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "swagger-jsdoc": "^3.4.0",
+    "swagger-ui-express": "^4.1.2",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
@@ -32,9 +34,6 @@
     "nodemon": "^1.19.4",
     "nyc": "^14.1.1",
     "pm2": "^4.1.2",
-    "supertest": "^4.0.2",
-    "swagger-jsdoc": "^3.4.0",
-    "swagger-ui-express": "^4.1.2",
-    "yamljs": "^0.3.0"
+    "supertest": "^4.0.2"
   }
 }
