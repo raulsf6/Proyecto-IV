@@ -6,6 +6,7 @@
     "start": "pm2 start ./src/bin/www",
     "start-dev": "nodemon -e js,yaml --ignore products.json ./src/bin/www",
     "start-azure": "node ./src/bin/www",
+    "start-heroku": "node ./src/bin/www",
     "stop": "pm2 stop ./src/bin/www",
     "delete": "pm2 delete ./src/bin/www",
     "test": "mocha --exit",
