@@ -34,6 +34,10 @@ Se testearán todos los ficheros incluidos bajo el directorio /test/ usando Moch
 
 buildtool: package.json
 
+## Despligue
+
+Despliegue: https://nutritionapi.herokuapp.com
+
 ## Documentación
 
 * [Integración Continua](https://github.com/raulsf6/Proyecto-IV/blob/master/docs/CI.md)
