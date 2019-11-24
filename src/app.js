@@ -14,7 +14,13 @@ var app = express();
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
-app.use(logger('dev'));
+if (process.env.NODE_ENV == 'production'){
+  app.use(logger('common'));
+}
+else{
+  app.use(logger('dev'));
+}
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
