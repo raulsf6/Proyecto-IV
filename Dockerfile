@@ -8,8 +8,7 @@ COPY ./docs ./docs
 COPY ./package.json .
 COPY ./package-lock.json .
 
-# La aplicación se escucha el puerto que 
-# se indica en la variable de entorno PORT
+# La aplicación se escucha el puerto que se indica en la variable de entorno PORT
 EXPOSE $PORT
 
 # El servidor en docker siemopre se lanza en produccion
