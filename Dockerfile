@@ -1,5 +1,5 @@
-# Version latest de node, ya que es la testeada
-FROM node:latest
+# Version alpine de node, ya que es muy ligera
+FROM node:alpine
 WORKDIR /usr/app
 
 # Copy de los archivos necesarios
