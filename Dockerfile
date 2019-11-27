@@ -4,7 +4,7 @@ WORKDIR /usr/app
 
 # Copy de los archivos necesarios
 COPY ./src ./src
-COPY ./docs/swagger.yml ./docs
+COPY ./docs/swagger.yml ./docs/swagger.yml
 COPY ./package.json .
 COPY ./package-lock.json .
 
