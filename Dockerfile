@@ -15,7 +15,7 @@ EXPOSE $PORT
 ENV NODE_ENV=production
 
 # Instalación de dependencias
-RUN npm ci
+RUN npm ci --only=prod
 
 # Se lanza server
 ENTRYPOINT npm run start-heroku
