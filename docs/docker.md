@@ -85,4 +85,16 @@ Finalmente, tendremos que indicar la dirección de webhook en nuestro repositori
 
 Cabe mencionar que la URL del webhook debe permanecer en secreto. Una vez esté configurado, cada vez que hagamos un push a github se reconstruirá nuestra imagen en Docker Hub y se actualizará el despliegue en Azure
 
+### Ejecución de docker
+
+Por defecto, Azure ejecutará:
+
+`docker run -d -p 2317:80 --name nutritionapidocker_0_d5d674a7 -e WEBSITES_ENABLE_APP_SERVICE_STORAGE=false -e WEBSITE_SITE_NAME=nutritionapidocker -e WEBSITE_AUTH_ENABLED=False -e PORT=80 -e WEBSITE_ROLE_INSTANCE_ID=0 -e WEBSITE_HOSTNAME=nutritionapidocker.azurewebsites.net -e WEBSITE_INSTANCE_ID=f5b53dd6c2e31d8e22f5c92e4a439dae2a6ba38818c7b1d0f7cad3e8d0dc1ba0 raulsf6/iv:latest  `
+
+Como podemos observar, carga la imagen desde raulsf6/iv:latest y establece la variable de entorno $PORT=80. La aplicación escuchará en el puerto que se establezca en la variable de entorno PORT, así que no es un problema. 
+
+Si queremos ejecutar la imagen localmente solo tendremos que ejecutar
+
+
+`docker run -d -p <puerto de escucha de nuestro host>:3000 raulsf6/iv:latest`
 
