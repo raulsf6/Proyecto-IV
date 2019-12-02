@@ -42,8 +42,7 @@ Contenedor: https://nutritionapidocker.azurewebsites.net
 
 ## DockerHub
 
-URL: https://hub.docker.com/repository/docker/raulsf6/iv
-
+URL: https://hub.docker.com/r/raulsf6/iv
 
 ## Documentación
 
