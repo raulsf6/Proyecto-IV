@@ -10,7 +10,10 @@
     "stop": "pm2 stop ./src/bin/www",
     "delete": "pm2 delete ./src/bin/www",
     "test": "mocha --exit",
-    "cover": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+    "cover": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "start-virt": "vagrant up",
+    "stop-virt": "vagrant halt",
+    "rm-virt": "vagrant destroy"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
