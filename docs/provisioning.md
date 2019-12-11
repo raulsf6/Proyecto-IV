@@ -2,7 +2,7 @@
 
 ## Ansible
 
-La herramienta escogida para el aprovisionamiento es Ansible. Ansible se encarga de gestionar todas las tareas relacionadas con el aprovisionamiento tales como gestión de paquetes, gestión de usuarios, control de versiones o gestión de claves mediante el archivo [playbook.yml]().
+La herramienta escogida para el aprovisionamiento es Ansible. Ansible se encarga de gestionar todas las tareas relacionadas con el aprovisionamiento tales como gestión de paquetes, gestión de usuarios, control de versiones o gestión de claves mediante el archivo [playbook.yml](https://github.com/raulsf6/Proyecto-IV/blob/master/provision/playbook.yml).
 
 El archivo, en nuestro caso, tiene la siguiente forma:
 
@@ -28,7 +28,7 @@ El archivo, en nuestro caso, tiene la siguiente forma:
       git: repo='https://github.com/raulsf6/Proyecto-IV' dest=/home/nutritionapi/app
 ```
 
-La primera línea indica el host en el que se va a ejecutar el aprovisionamiento. Dado que en nuestro caso usamos Vagrant como mecanismo de virtualización, el nombre del host es default. Esto es debido a que vamos a usar el inventory que genera Vagrant por defecto al usar el aprovisionamiento de Ansible. Para más información sobre Vagrant puedes consultar [aquí](). La línea `become: true` indica que se hará con permisos de superusuario.
+La primera línea indica el host en el que se va a ejecutar el aprovisionamiento. Dado que en nuestro caso usamos Vagrant como mecanismo de virtualización, el nombre del host es default. Esto es debido a que vamos a usar el inventory que genera Vagrant por defecto al usar el aprovisionamiento de Ansible. Para más información sobre Vagrant puedes consultar [aquí](https://github.com/raulsf6/Proyecto-IV/blob/master/docs/virtualization.md). La línea `become: true` indica que se hará con permisos de superusuario.
 
 El siguiente bloque son las tareas que se deben realizar para aprovisionar la máquina. La primera usa el módulo apt de Ansible para instalar los paquetes necesarios, que son nodejs, npm y git. De nuevo, se ejecutará con permisos de superusuario.
 

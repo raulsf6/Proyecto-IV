@@ -6,7 +6,7 @@ La herramienta utilizada para virtualizar es Vagrant por su sencillez de uso y s
 
 Por supuesto, necesitamos instalar Vagrant en nuestro sistema para levantar la máquina. Además, usamos VirtualBox como provider, por lo que también necesitaremos instalarlo.
 
-Para configurar nuestro máquina necesitamos un [Vagrantfile](), que en nuestro caso luce así:
+Para configurar nuestro máquina necesitamos un [Vagrantfile](https://github.com/raulsf6/Proyecto-IV/blob/master/Vagrantfile), que en nuestro caso luce así:
 
 ```
 Vagrant.configure("2") do |config|
@@ -34,7 +34,7 @@ La siguiente línea corresponde a la configuración de los puertos, que en nuest
 
 EL siguiente bloque corresponde a la configuración del provider, en nuestro caso VirtualBox, en el que indicamos que usaremos 2 GB de RAM y 2 CPUs.
 
-Finalmente tenemos el bloque de provisionamiento. En este bloque indicamos que vamos a usar Ansible como herramienta de aprovisionamiento y la localización del playbook del mismo. Para más información sobre aprovisionamiento puedes consultar [aquí]().
+Finalmente tenemos el bloque de provisionamiento. En este bloque indicamos que vamos a usar Ansible como herramienta de aprovisionamiento y la localización del playbook del mismo. Para más información sobre aprovisionamiento puedes consultar [aquí](https://github.com/raulsf6/Proyecto-IV/blob/master/docs/provisioning.md).
 
 Para levantar la máquina solo tendremos que ejecutar:
 
@@ -48,4 +48,4 @@ Para parar la máquina ejecutaremos:
 
 Y para destruirla ejecutaremos:
 
-`npm run rem-virt`
+`npm run rm-virt`
