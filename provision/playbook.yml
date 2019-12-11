@@ -1,0 +1,20 @@
+- hosts: default
+  tasks:
+    - name: "Install apt dependencies"
+      become: yes
+      apt: 
+        update_cache: yes 
+        pkg: 
+          - npm
+          - nodejs
+          - git
+    
+    - name: Add User
+      become: true
+      user: name=nutritionapi shell=/bin/bash
+    
+    - name: "Clone the repo"
+      become: yes
+      become_user: nutritionapi
+      git: repo='https://github.com/raulsf6/Proyecto-IV' dest=/home/nutritionapi/app   
+
