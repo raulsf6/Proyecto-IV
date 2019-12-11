@@ -44,6 +44,10 @@ Contenedor: https://nutritionapidocker.azurewebsites.net
 
 URL: https://hub.docker.com/r/raulsf6/iv
 
+## Provisionamiento
+
+provision: provision/playbook.yml
+
 ## Documentación
 
 * [Integración Continua](https://github.com/raulsf6/Proyecto-IV/blob/master/docs/CI.md)
@@ -52,4 +56,7 @@ URL: https://hub.docker.com/r/raulsf6/iv
 * [Api](https://github.com/raulsf6/Proyecto-IV/blob/master/docs/apidocs.md)
 * [Despliegue](https://github.com/raulsf6/Proyecto-IV/blob/master/docs/deploy.md)
 * [Docker](https://github.com/raulsf6/Proyecto-IV/blob/master/docs/docker.md)
+* [Ansible](https://github.com/raulsf6/Proyecto-IV/blob/master/docs/provisioning.md)
+* [Vagrant](https://github.com/raulsf6/Proyecto-IV/blob/master/docs/virtualization.md)
+
 
